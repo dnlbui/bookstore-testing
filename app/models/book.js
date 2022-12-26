@@ -3,7 +3,7 @@ let currentId = 1;
 
 class Book {
   constructor(params) {
-    Object.assign(this,params);
+    Object.assign(this,params);//(target,source)
   }
 
   static addBook(newBook) {

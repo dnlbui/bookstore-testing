@@ -7,7 +7,7 @@ function getBooks(req, res) {
 function postBook (req, res) {
   let newBook = new Book(req.body);
   Book.addBook(newBook)
-  res.send(newBook);
+  res.send(newBook); //.send function sends the HTTP response. Body parameter can be a String, Buffer object or an object or array
 };
 
 function getBook (req, res) {
