@@ -1,7 +1,20 @@
 let books = [
-  {author: "I like cheese"}
+  {
+    title: "The Blunder Games",
+    author: "Suzanne Cole",
+    year: 2024,
+    pages: 5,
+    id: 1
+  },
+  {
+    title: "asdfasdf",
+    author: "asdfasdf",
+    year: 2010,
+    pages: 10,
+    id: 2 
+  }
 ];
-let currentId = 1;
+let currentId = 2;
 
 class Book {
   constructor(params) {
