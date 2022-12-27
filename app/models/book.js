@@ -1,4 +1,6 @@
-let books = [];
+let books = [
+  {author: "I like cheese"}
+];
 let currentId = 1;
 
 class Book {
