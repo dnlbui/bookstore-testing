@@ -4,6 +4,7 @@ let chai = require("chai");
 let chaiHttp = require("chai-http");
 let server = require("../server");
 const { expect } = require("chai");
+const { getBooks } = require("../app/routes/book");
 
 let should = chai.should();
 
@@ -27,17 +28,19 @@ describe("Books", () => {
           done();
         });
     });
-    
-    it("it should GET a book by the given id", (done) => {
 
+    it("it should GET a book by the given id", done => {
       chai
         .request(server)
         .get("/book/1")
         .end((err, res) => {
-          res.should.have.status(404); 
+          res.should.have.status(404);
+          res.text.should.equal("Book Not Found")
           done();
-        });
-    });
+        })
+        
+    })
+    
   });
 
   describe("/POST book", () => {
@@ -85,4 +88,14 @@ describe("Books", () => {
         })
     })
   });
+
+  describe("/PUT book", () => {
+    it("it should UPDATE a book given the id", done => {
+
+      chai
+        .request(server)
+        .put("/book/1")
+    })
+
+  })
 });
